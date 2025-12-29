@@ -1,0 +1,9 @@
+setuptools
+opencv-python
+Cython
+tqdm
+tensorflow[and-cuda]
+av
+scikit-image
+SSIM-PIL
+pyopencl

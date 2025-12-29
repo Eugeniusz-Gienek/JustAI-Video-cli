@@ -205,3 +205,13 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Temp
+temp/
+res.mp4.temp/
+
+*.mp4
+opencv_contrib/
+
+# Models folder
+film_models/

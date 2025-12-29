@@ -1,0 +1,1 @@
+./setup.sh && python -W ignore::UserWarning  main.py --gpu --fp16 --interpolation_fps=48 --task interpolate --source_video /home/windy/Downloads/AudioVideo/THE\ PRETTY\ RECKLESS\ -\ 25_24fps.mp4 --dest_video /home/windy/Projects/JustAI_video/temp/res.mp4 --frames_stack_flush_limit=10 --resume --max_frames=20 --loud 
