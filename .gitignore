@@ -209,6 +209,7 @@ __marimo__/
 # Temp
 temp/
 res.mp4.temp/
+*.c
 
 *.mp4
 opencv_contrib/

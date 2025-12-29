@@ -1,5 +1,5 @@
 #!/bin/bash
-#export CMAKE_ARGS="-D WITH_FFMPEG=ON -D WITH_OPENCL=OFF -D WITH_CUDA=ON -D OPENCV_EXTRA_MODULES_PATH=/home/windy/Projects/JustAI_video/opencv_contrib/modules"
+#export CMAKE_ARGS="-D WITH_FFMPEG=ON -D WITH_OPENCL=OFF -D WITH_CUDA=ON -D OPENCV_EXTRA_MODULES_PATH=/%your_path_for_custom_libs%/opencv_contrib/modules"
 export CMAKE_ARGS="-D WITH_FFMPEG=ON -D WITH_OPENCL=OFF"
 #pip install --verbose --no-binary opencv-contrib-python --no-deps opencv-contrib-python
 #git clone https://github.com/opencv/opencv_contrib.git
