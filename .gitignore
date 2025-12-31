@@ -214,6 +214,7 @@ requirements_nv2.txt
 
 *.mp4
 #opencv_contrib/
+#opencv
 
 # Models folder
 film_models/
