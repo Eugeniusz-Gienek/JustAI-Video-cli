@@ -1,8 +1,11 @@
 #!/bin/bash
+#pip install --no-cache-dir opencv-contrib-python
 #export CMAKE_ARGS="-D WITH_FFMPEG=ON -D WITH_OPENCL=OFF -D WITH_CUDA=ON -D OPENCV_EXTRA_MODULES_PATH=/%your_path_for_custom_libs%/opencv_contrib/modules"
 export CMAKE_ARGS="-D WITH_FFMPEG=ON -D WITH_OPENCL=OFF"
+# -D WITH_CUDA=ON"
+# -DCMAKE_CXX_STANDARD=14 -DLAPACK=OFF"
 #pip install --verbose --no-binary opencv-contrib-python --no-deps opencv-contrib-python
 #git clone https://github.com/opencv/opencv_contrib.git
 #cd opencv_contrib/modules
-pip install --no-cache-dir --verbose --no-binary opencv-python --no-deps opencv-python
+pip install --no-cache-dir --verbose --no-binary opencv-python --no-deps opencv-python==4.12.0.88
 #pip install --no-binary opencv-python-headless --no-deps opencv-python-headless

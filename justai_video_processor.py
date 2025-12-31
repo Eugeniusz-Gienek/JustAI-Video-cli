@@ -11,7 +11,7 @@ from torch.nn import functional as F
 from skimage import metrics
 from SSIM_PIL import compare_ssim
 from PIL import Image
-from tempfile import TemporaryFile, TemporaryDirectory
+from tempfile import TemporaryFile, TemporaryDirectory, NamedTemporaryFile
 
 from justai_video_processor_logs import *
 from justai_video_processing_lib_fps_magic import *
@@ -1604,7 +1604,7 @@ def interpolate_film(
         
         if nsfio_params['enabled'] and nsfio_params['nsfio_before_interpolation']:
             if (nsfio_params['frames_map_file_json'] is None) or (nsfio_params['frames_map_file_json'] == ''):
-                nsfio_params['frames_map_file_json'] = TemporaryFile(prefix=this_app_codename).name
+                nsfio_params['frames_map_file_json'] = NamedTemporaryFile(prefix=this_app_codename).name
             if not nsfio_params['frames_map_file_json_supplied']:
                 nsfioGenerator  = ctx.Process(target=workerNsfioGenerator,      args=(
                                                                                         #threads_comm,

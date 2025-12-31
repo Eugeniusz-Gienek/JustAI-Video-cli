@@ -1,5 +1,5 @@
 setuptools
-opencv-python
+#opencv-python
 Cython
 tqdm
 tensorflow[and-cuda]
