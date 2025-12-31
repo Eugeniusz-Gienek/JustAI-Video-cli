@@ -213,7 +213,7 @@ res.mp4.temp/
 requirements_nv2.txt
 
 *.mp4
-opencv_contrib/
+#opencv_contrib/
 
 # Models folder
 film_models/
