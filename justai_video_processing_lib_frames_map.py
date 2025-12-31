@@ -198,7 +198,13 @@ def build_frames_map(
                     if calc_method == 'ssim':
                         img1        = img2
                         img2        = Image.fromarray(src_image2).convert('RGB')
-                        ssim_score  = compare_ssim(img1, img2, GPU=use_gpu)
+                        try:
+                            ssim_score  = compare_ssim(img1, img2, GPU=use_gpu)
+                        except:
+                            use_gpu = False
+                            log_append_print(f'[ Frames Map ][{calc_method},{use_gpu_txt}] Unsuccessful attempt to compare frames using SSIM (most probably due to internal issues with PyOpenCL implementation inside SSIM-PIL library with GPU enabled). Disabling GPU for SSIM only.', log_file=frames_map_log_file, disable_logs=disable_logs, loud=loud)
+                            use_gpu_txt = 'cpu'
+                            ssim_score  = compare_ssim(img1, img2, GPU=use_gpu)
                         output_data.append(ssim_score)
                         res_val = ssim_score
                         if output_to == 'screen':

@@ -29,6 +29,10 @@ echo
 fi
 fi
 
+if [ -z $CUDNN_INCLUDE_DIR ]; then
+ERRORS_COLLECTED="${ERRORS_COLLECTED}- CUDNN could not be found (variable "'$'"CUDNN_INCLUDE_DIR is empty).\n"
+fi
+
 if [ ! -z "${ERRORS_COLLECTED}" ]; then
 echo "Can't proceed due to following errors found:"
 echo -e $ERRORS_COLLECTED
@@ -73,15 +77,21 @@ pip install protobuf || die "Cannot install Protobuf"
 # ==5.29.5 || die "Cannot install Protobuf"
 # echo "Installing general requirements..."
 # pip install --no-cache-dir -r requirements.txt || die "Cannot install general requirements"
+./install_opencv_contrib.sh || die "Cannot install OpenCV Contrib"
+echo "Installing OpenCV Contrib..."
 bash ./requirements_opencv_3.13.txt || die "Cannot install OpenCV"
 pip install --no-cache-dir -r requirements.txt || die "Cannot install general requirements (part 2)"
 else
 
 echo "Installing general requirements..."
 pip install --no-cache-dir -r requirements.txt || die "Cannot install general requirements"
+echo "Installing OpenCV Contrib..."
+./install_opencv_contrib.sh || die "Cannot install OpenCV"
 bash ./requirements_opencv.txt || die "Cannot install OpenCV"
 
 fi
+
+pip install pyopencl[pocl]
 
 echo "Updating cuda requirements file."
 
