@@ -106,6 +106,7 @@ pip install protobuf || die "Cannot install Protobuf"
 
 # Installing OpenCV Contrib modules for CUDA to work
 echo "Installing OpenCV Contrib..."
+cd ../opencv_contrib && git checkout d99ad2a188210cc35067c2e60076eed7c2442bc3 && cd ../manual
 ./install_opencv_contrib.sh || die "Cannot install OpenCV Contrib"
 
 pip install pyopencl[pocl]
@@ -116,9 +117,13 @@ cp -r ../opencv_fixes/opencv/3rdparty/ippicv ../opencv/3rdparty/
 
 rm -f ../opencv/CMakeCache.txt
 
-echo "Installing OpenCV Contrib..."
+echo "Installing OpenCV..."
+cd ../opencv && git checkout fe38fc608f6acb8b68953438a62305d8318f4fcd && cd ../manual
 ./install_opencv.sh || die "Cannot install OpenCV"
 pip install --no-cache-dir -r ../requirements.txt || die "Cannot install general requirements (part 2)"
+
+pip install pyopencl[pocl]
+
 else
 
 echo "Installing general requirements..."
@@ -134,9 +139,12 @@ cp -r ../opencv_fixes/opencv/3rdparty/ippicv ../opencv/3rdparty/
 
 rm -f ../opencv/CMakeCache.txt
 ./install_opencv.sh || die "Cannot install OpenCV"
-fi
 
 pip install pyopencl[pocl]
+
+fi
+
+
 
 echo "Updating CUDA requirements file."
 

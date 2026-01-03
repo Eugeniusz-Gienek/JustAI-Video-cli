@@ -26,6 +26,8 @@ Current features included:
 The assumption is that You are using some Linux distibution (tested on Gentoo) and the NVidia GPU - these installers are build with these facts in mind.
 Currently there are two installers - manual and Docker. Manual installs the tool directly in the system (python virtualenv isolates all the python packages though and resolves dependencies), Docker installs the script inside, well, Docker.
 
+First of all, create a directory `film_models` and put there the file from [remark](https://github.com/Eugeniusz-Gienek/JustAI-Video-cli/tree/main?tab=readme-ov-file#remark)
+
 ### Manual installation
 `./install_manual.sh`
 
