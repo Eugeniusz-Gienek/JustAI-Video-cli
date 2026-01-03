@@ -29,12 +29,12 @@ Currently there are two installers - manual and Docker. Manual installs the tool
 First of all, create a directory `film_models` and put there the file from [remark](https://github.com/Eugeniusz-Gienek/JustAI-Video-cli/tree/main?tab=readme-ov-file#remark)
 
 ### Manual installation
-`./install_manual.sh`
+`./install/install_manual.sh`
 
 ### Docker installation
 In order to run NVidia Docker image You'd need to install [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) first.
 Installation also requires Docker itself, Docker buildx and nvidia drivers installed.
-`./install_docker.sh`
+`./install/install_docker.sh`
 
 ## Remark
 Due to [GitHub size limitations](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github#distributing-large-binaries) the model file [film_net_fp32.pt](https://github.com/Eugeniusz-Gienek/JustAI-Video-cli/releases/download/0.1-pre-alpha/film_net_fp32.pt) has to be downloaded separately and put into `film_models` folder.
