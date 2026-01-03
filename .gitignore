@@ -210,11 +210,16 @@ __marimo__/
 temp/
 res.mp4.temp/
 *.c
+install/requirements_nv2.txt
 requirements_nv2.txt
 
 *.mp4
-#opencv_contrib/
-#opencv
+opencv_contrib/
+opencv
+install/opencv_contrib/
+install/opencv/
 
 # Models folder
 film_models/
+
+#Dockerfile
