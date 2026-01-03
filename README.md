@@ -14,19 +14,23 @@ Current features included:
 * Installation instructions are not there yet - in TODO list
 * Project was tested and run at the moment of writing this manual ONLY on Linux and ONLY using NVidia GPU (RTX 3090 in particular). AMD, Intel and others (?) are not yet tested.
 
-## What is needed to run this
-* python3.13 or 3.12 (other versions untested)
+## What is needed to run this (in principle) - software
+* python3.13 (best option) or 3.12 (other versions untested)
 * cython
 * ffmpeg
-* opencv (by the way the "packaged" opencv is limited and should be re-compiled with proper FFMPEG enabled - take a look at file [requirements_opencv.txt](https://github.com/Eugeniusz-Gienek/JustAI-Video-cli/blob/main/requirements_opencv.txt))
+* opencv (the "packaged" opencv is limited and should be re-compiled with proper FFMPEG enabled - take a look at file [requirements_opencv.txt](https://github.com/Eugeniusz-Gienek/JustAI-Video-cli/blob/main/requirements_opencv.txt))
 * Patience. Your patience.
 
 ## Installation
+
+The assumption is that You are using some Linux distibution (tested on Gentoo) and the NVidia GPU - these installers are build with these facts in mind.
+Currently there are two installers - manual and Docker. Manual installs the tool directly in the system (python virtualenv isolates all the python packages though and resolves dependencies), Docker installs the script inside, well, Docker.
 
 ### Manual installation
 `./install_manual.sh`
 
 ### Docker installation
+In order to run NVidia Docker image You'd need to install [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) first.
 `./install_docker.sh`
 
 ## Remark

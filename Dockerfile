@@ -90,4 +90,7 @@ COPY ./film_models/ ./film_models/
 # Cython compilation
 RUN bash install_nvidia_docker4.sh
 
-ENTRYPOINT ["python", "-W ignore::UserWarning",  "/usr/src/app/main.py"]
+RUN mkdir /share
+
+#ENTRYPOINT ["python", "-W ignore::UserWarning",  "/usr/src/app/main.py"]
+ENTRYPOINT ["/usr/src/app/runner.sh"]
