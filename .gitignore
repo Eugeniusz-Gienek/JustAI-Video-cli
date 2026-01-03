@@ -216,8 +216,8 @@ requirements_nv2.txt
 *.mp4
 opencv_contrib/
 opencv
-install/opencv_contrib/
-install/opencv/
+#install/opencv_contrib/
+#install/opencv/
 
 # Models folder
 film_models/
