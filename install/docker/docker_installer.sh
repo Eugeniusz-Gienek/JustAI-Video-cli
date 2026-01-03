@@ -5,4 +5,4 @@ cd $scriptDir
 
 cd ../../
 
-docker buildx build .
+docker buildx build -t eugeniusz-gienek/justai-video-cli .

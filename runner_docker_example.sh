@@ -21,7 +21,7 @@ fi
 
 # Please use paths the "/share/...."-style ones - e.g. script inside docker will consider the paths as related to root directory "/share" (which is inside docker container)
 
-DOCKER_CONTAINER_NAME="JustAI-Video-cli"
+DOCKER_CONTAINER_NAME="eugeniusz-gienek/justai-video-cli"
 
 docker run --rm -i -v "$dir_name":/share "${DOCKER_CONTAINER_NAME}" "$@"
 
