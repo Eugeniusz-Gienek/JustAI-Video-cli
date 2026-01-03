@@ -1,6 +1,10 @@
 #!/bin/bash
 echo "Installation of JustAI Video CLI"
 
+scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
+
+cd $scriptDir
+
 die() { echo "$*" 1>&2 ; exit 1; }
 
 SUPPORTED_PY_VER="3.13" # we'll not be limiting to this version only though. 3.12 worked just fine.

@@ -22,7 +22,12 @@ Current features included:
 * Patience. Your patience.
 
 ## Installation
-`./install_nvidia.sh`
+
+### Manual installation
+`./install_manual.sh`
+
+### Docker installation
+`./install_docker.sh`
 
 ## Remark
 Due to [GitHub size limitations](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github#distributing-large-binaries) the model file [film_net_fp32.pt](https://github.com/Eugeniusz-Gienek/JustAI-Video-cli/releases/download/0.1-pre-alpha/film_net_fp32.pt) has to be downloaded separately and put into `film_models` folder.
