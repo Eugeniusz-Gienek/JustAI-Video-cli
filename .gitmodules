@@ -1,8 +1,8 @@
 [submodule "opencv_contrib"]
-	path = opencv_contrib
+	path = install/opencv_contrib
 	url = https://github.com/opencv/opencv_contrib
 	branch = 4.x
 [submodule "opencv"]
-	path = opencv
+	path = install/opencv
 	url = https://github.com/opencv/opencv.git
 	branch = 4.x
