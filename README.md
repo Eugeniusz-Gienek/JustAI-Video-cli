@@ -34,6 +34,7 @@ First of all, create a directory `film_models` and put there the file from [rema
 ### Docker installation
 In order to run NVidia Docker image You'd need to install [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) first.
 Installation also requires Docker itself, Docker buildx and nvidia drivers installed.
+
 `./install/install_docker.sh`
 
 ## Remark
