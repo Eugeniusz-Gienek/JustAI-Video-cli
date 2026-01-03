@@ -16,10 +16,7 @@ C_DIR=$(pwd)
 
 echo "Entering virtual environment."
 
-. ../../venv/bin/activate || die "Could not enter virtual environment"
-
-#pwd
-cd ..
+. ./venv/bin/activate || die "Could not enter virtual environment"
 
 # We have to recompile opencv-python because pip-provided version lacks FFMPEG integration which is needed for the project to function.
 

@@ -4,8 +4,6 @@
 #export CMAKE_ARGS="-D WITH_FFMPEG=ON -D WITH_OPENCL=OFF -D WITH_CUDA=ON -D OPENCV_EXTRA_MODULES_PATH=/%your_path_for_custom_libs%/opencv_contrib/modules"
 #export CMAKE_ARGS="-D WITH_FFMPEG=ON -D WITH_OPENCL=OFF"
 
-cd ..
-
 C_DIR=$(pwd)
 C_PYTHON3_INCLUDE_DIR=$(python -c "from sysconfig import get_paths as gp; print(gp()['include'])")
 C_PYTHON3_PACKAGES_PATH=$(python -c "import sysconfig; print(sysconfig.get_paths()['purelib'])")
@@ -19,7 +17,7 @@ export CMAKE_ARGS="\
 -D WITH_CUDA=ON \
 -D WITH_CUDNN=ON \
 -D BUILD_opencv_cudacodec=ON \
--D OPENCV_EXTRA_MODULES_PATH=${C_DIR}/../opencv_contrib/modules/ \
+-D OPENCV_EXTRA_MODULES_PATH=${C_DIR}/opencv_contrib/modules/ \
 -D WITH_NVCUVID=OFF \
 -D WITH_NVCUVENC=OFF \
 -DLAPACK=OFF \

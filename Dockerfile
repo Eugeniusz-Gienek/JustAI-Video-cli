@@ -28,9 +28,9 @@ RUN ln -s /usr/lib/x86_64-linux-gnu/libopenjp.so.2.5.0 /usr/lib/x86_64-linux-gnu
 
 # Copying requirements
 
-COPY ../requirements.txt ./
-COPY ../requirements_general_a.txt ./
-COPY ../requirements_nv.txt ./
+COPY ./install/requirements.txt ./
+COPY ./install/requirements_general_a.txt ./
+COPY ./install/requirements_nv.txt ./
 
 # Initializing directories
 RUN mkdir ./build
@@ -38,10 +38,10 @@ RUN mkdir ./opencv
 RUN mkdir ./opencv_contrib
 
 # Copying rest of the requirements and installers
-COPY *.sh ./
+COPY ./install/docker/*.sh ./
 
 # Copying installer fixes
-COPY ../opencv_fixes/ ./opencv_fixes/
+COPY ./install/opencv_fixes/ ./opencv_fixes/
 
 # Initializing git settings
 RUN git config --global advice.detachedHead false
@@ -82,10 +82,10 @@ RUN bash install_nvidia_docker2.sh
 RUN bash install_nvidia_docker3.sh
 
 # Copying project files. It is done on this step in order to be able to cache everything above and not recompile OpenCV again in case Python files changed.
-COPY ../../*.py ./
+COPY ./*.py ./
 
 # Copying models
-COPY ../../film_models/ ./film_models/
+COPY ./film_models/ ./film_models/
 
 # Cython compilation
 RUN bash install_nvidia_docker4.sh

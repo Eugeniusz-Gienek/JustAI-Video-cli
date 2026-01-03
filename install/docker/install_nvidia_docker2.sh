@@ -15,7 +15,7 @@ C_DIR=$(pwd)
 
 echo "Entering virtual environment."
 
-. ../../venv/bin/activate || die "Could not enter virtual environment"
+. ./venv/bin/activate || die "Could not enter virtual environment"
 
 #pwd
 
@@ -24,7 +24,7 @@ echo "Installing OpenCV requirements..."
 
 if [ "${PY_VER}" == "${SUPPORTED_PY_VER}" ]; then
 # Clearing cache just in case
-rm -f ../opencv/CMakeCache.txt
+rm -f ./opencv/CMakeCache.txt
 
 # Installing OpenCV itself.
 echo "Installing OpenCV from source with FFMPEG..."
@@ -32,7 +32,7 @@ echo "Installing OpenCV from source with FFMPEG..."
 
 echo "Installing rest of the requirements"
 # Installing rest of the requirements in case we forgot smth or it became accidentally uninstalled by PIP.
-pip install --no-cache-dir -r ../requirements.txt || die "Cannot install general requirements (part 2)"
+pip install --no-cache-dir -r ./requirements.txt || die "Cannot install general requirements (part 2)"
 
 else
 echo "Unsupported python version (expected ${SUPPORTED_PY_VER}, got ${PY_VER})"

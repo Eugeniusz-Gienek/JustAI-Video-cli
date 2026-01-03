@@ -70,9 +70,9 @@ echo "NVCC version: ${NV_VER}"
 echo "FFMPEG version: ${FFMPEG_VER}"
 
 # Creating virtual environment
-if [ ! -d "../../venv" ]; then
+if [ ! -d "./venv" ]; then
 echo "Creating python virtual environment directory"
-python -m venv ../../venv || die "Could not create python virtual environment. This might happen if the venv module does not exist in Python installation."
+python -m venv ./venv || die "Could not create python virtual environment. This might happen if the venv module does not exist in Python installation."
 else
 echo "Python virtual environment directory already exists. Skipping."
 fi
@@ -81,7 +81,7 @@ C_DIR=$(pwd)
 
 echo "Entering virtual environment."
 
-. ../../venv/bin/activate || die "Could not enter virtual environment"
+. ./venv/bin/activate || die "Could not enter virtual environment"
 
 # We have to recompile opencv-python because pip-provided version lacks FFMPEG integration which is needed for the project to function.
 echo "Installing OpenCV requirements..."
@@ -91,13 +91,13 @@ pip uninstall -y opencv-python
 pip uninstall -y protobuf
 
 # There might be errors related to cached cmake files so removing these files in order to overcome this issue.
-rm -f ../opencv_contrib/CMakeCache.txt
-rm -f ../opencv/CMakeCache.txt
+rm -f ./opencv_contrib/CMakeCache.txt
+rm -f ./opencv/CMakeCache.txt
 
 if [ "${PY_VER}" == "${SUPPORTED_PY_VER}" ]; then
 
 # Installing general requirements, not yet including NVIDIA PIP repo
-pip install --no-cache-dir -r ../requirements_general_a.txt || die "Cannot install general requirements"
+pip install --no-cache-dir -r ./requirements_general_a.txt || die "Cannot install general requirements"
 pip install protobuf || die "Cannot install Protobuf"
 
 # Installing OpenCV Contrib modules for CUDA to work
