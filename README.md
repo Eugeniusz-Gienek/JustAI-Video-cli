@@ -31,6 +31,7 @@ Currently there are two installers - manual and Docker. Manual installs the tool
 
 ### Docker installation
 In order to run NVidia Docker image You'd need to install [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) first.
+Installation also requires Docker itself, Docker buildx and nvidia drivers installed.
 `./install_docker.sh`
 
 ## Remark
